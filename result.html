@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Suggestions</title>
+    <link rel="stylesheet" href="replacecareer.css">
+</head>
+<body>
+
+<h2 class="title">Based on your profile, you can become</h2>
+
+<div class="card-container" id="careerCards"></div>
+
+<script>
+const interest = localStorage.getItem("interest");
+const container = document.getElementById("careerCards");
+
+const data = {
+    "IT": [
+        ["Software Engineer", "Build applications, systems & solve real-world problems"],
+        ["Web Developer", "Create modern websites & web applications"],
+        ["UI / UX Designer", "Design user-friendly & beautiful interfaces"]
+    ],
+    "Banking": [
+        ["Bank Officer", "Manage banking operations & customer services"],
+        ["Financial Analyst", "Analyze financial data & investment risks"],
+        ["Investment Banker", "Handle investments & capital markets"]
+    ],
+    "Healthcare": [
+        ["Medical Lab Technician", "Perform diagnostic laboratory tests"],
+        ["Healthcare Administrator", "Manage hospitals & healthcare systems"],
+        ["Clinical Research Associate", "Conduct medical research & trials"]
+    ],
+    "Entrepreneurship": [
+        ["Startup Founder", "Build and grow innovative businesses"],
+        ["Business Consultant", "Advise companies for better growth"],
+        ["Product Manager", "Manage product planning & execution"]
+    ],
+    "Manufacturing": [
+        ["Production Engineer", "Optimize production processes"],
+        ["Quality Control Engineer", "Ensure product quality standards"],
+        ["Operations Manager", "Oversee manufacturing operations"]
+    ]
+};
+
+(data[interest] || []).forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = `card big-card color${index+1}`;
+    card.innerHTML = `
+        <h3>${item[0]}</h3>
+        <p>${item[1]}</p>
+    `;
+
+    card.onclick = () => {
+        localStorage.setItem("career", item[0]);
+        window.location.href = "career.html";
+    };
+
+    container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
+
+
+

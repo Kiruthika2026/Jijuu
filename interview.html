@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Interview Preparation</title>
+    <link rel="stylesheet" href="interview.css">
+</head>
+<body>
+
+<h1 id="page-title">Interview Preparation</h1>
+<p class="subtitle" id="subtitle"></p>
+
+<div class="category-container">
+
+    <div class="card" onclick="showAptitude()">
+        <h2>Aptitude</h2>
+        <p>Quantitative & Logical</p>
+    </div>
+
+    <div class="card" onclick="showGD()">
+        <h2>Group Discussion</h2>
+        <p>Communication Skills</p>
+    </div>
+
+    <div class="card" onclick="showOnline()">
+        <h2>Online Test</h2>
+        <p>MCQs / Coding</p>
+    </div>
+
+    <div class="card" onclick="showOffline()">
+        <h2>Interview</h2>
+        <p>HR & Technical</p>
+    </div>
+
+</div>
+
+<div class="content-box" id="content">
+    <p>Select a section above to begin preparation.</p>
+</div>
+
+<div class="job-btn-container">
+    <button class="job-btn" onclick="searchJobs()">Search Jobs</button>
+</div>
+
+<script>
+const career = localStorage.getItem("career")?.trim();
+
+document.getElementById("subtitle").innerText =
+    career ? `Preparation for ${career}` : "General Interview Preparation";
+
+/* ================= APTITUDE ================= */
+
+function showAptitude() {
+
+    if (career === "Bank Officer") {
+        content.innerHTML = `
+            <h3>Banking Aptitude</h3>
+            <ul>
+                <li><a href="https://www.indiabix.com/aptitude/questions-and-answers/" target="_blank">Bank Aptitude – IndiaBIX</a></li>
+                <li><a href="https://www.careerpower.in/bank-aptitude.html" target="_blank">Career Power Banking</a></li>
+            </ul>`;
+    }
+
+    else if (career === "Software Engineer" || career === "Web Developer") {
+        content.innerHTML = `
+            <h3>Technical Aptitude</h3>
+            <ul>
+                <li><a href="https://www.geeksforgeeks.org/aptitude-questions-and-answers/" target="_blank">GFG Aptitude</a></li>
+                <li><a href="https://www.indiabix.com/aptitude/questions-and-answers/" target="_blank">IndiaBIX</a></li>
+            </ul>`;
+    }
+
+    else {
+        content.innerHTML = `
+            <h3>General Aptitude</h3>
+            <ul>
+                <li><a href="https://www.indiabix.com/aptitude/" target="_blank">IndiaBIX</a></li>
+            </ul>`;
+    }
+}
+
+/* ================= GD ================= */
+
+function showGD() {
+    content.innerHTML = `
+        <h3>Group Discussion</h3>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/group-discussion-topics/" target="_blank">GFG GD Topics</a></li>
+            <li><a href="https://www.careerride.com/group-discussion.aspx" target="_blank">CareerRide</a></li>
+        </ul>`;
+}
+
+/* ================= ONLINE TEST ================= */
+
+function showOnline() {
+
+    if (career === "Software Engineer" || career === "Web Developer") {
+        content.innerHTML = `
+            <h3>Coding & MCQs</h3>
+            <ul>
+                <li><a href="https://www.hackerrank.com/domains" target="_blank">HackerRank</a></li>
+                <li><a href="https://www.codechef.com/practice" target="_blank">CodeChef</a></li>
+            </ul>`;
+    }
+
+    else if (career === "Bank Officer") {
+        content.innerHTML = `
+            <h3>Bank Online Tests</h3>
+            <ul>
+                <li><a href="https://testbook.com/banking-exams" target="_blank">Testbook Banking</a></li>
+                <li><a href="https://www.gradeupstudy.store/web/Course/course_details_test?id=22834">Gradeup</a></li>
+            </ul>`;
+    }
+
+    else {
+        content.innerHTML = `
+            <h3>General Online Tests</h3>
+            <ul>
+                <li><a href="https://edurev.in/test/34089/Test-Investment-Banking-1">MCQs</a></li>
+            </ul>`;
+    }
+}
+
+/* ================= OFFLINE INTERVIEW ================= */
+
+function showOffline() {
+
+    if (career === "Healthcare Administrator" || career === "Medical Lab Technician") {
+        content.innerHTML = `
+            <h3>Healthcare Interview</h3>
+            <ul>
+                <li><a href="https://www.indeed.com/career-advice/interviewing" target="_blank">Healthcare Interview Tips</a></li>
+                <li><a href="https://www.glassdoor.com/Interview/index.htm" target="_blank">Glassdoor Questions</a></li>
+            </ul>`;
+    }
+
+    else if (career === "Software Engineer" || career === "Web Developer") {
+        content.innerHTML = `
+            <h3>Technical Interview</h3>
+            <ul>
+                <li><a href="https://www.geeksforgeeks.org/hr-interview-questions/" target="_blank">HR Questions</a></li>
+                <li><a href="https://www.javatpoint.com/interview-questions-and-answers" target="_blank">Technical Q&A</a></li>
+            </ul>`;
+    }
+
+    else {
+        content.innerHTML = `
+            <h3>General Interview</h3>
+            <ul>
+                <li><a href="https://www.indeed.com/career-advice/interviewing" target="_blank">Indeed Tips</a></li>
+            </ul>`;
+    }
+}
+
+/* ================= JOB SEARCH ================= */
+
+function searchJobs() {
+    if (career === "Bank Officer") {
+        window.open("https://www.ibps.in", "_blank");
+    } else {
+        window.open("https://www.naukri.com", "_blank");
+    }
+}
+</script>
+
+</body>
+</html>

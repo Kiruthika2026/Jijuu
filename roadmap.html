@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Roadmap</title>
+    <link rel="stylesheet" href="roadmap.css">
+</head>
+<body>
+
+<h1 id="roadmap-title"></h1>
+
+<div class="timeline" id="roadmap-content"></div>
+
+<div class="btn-container">
+    <button class="next-btn" onclick="goInterview()">View Interview Preparation</button>
+</div>
+
+<script>
+const career = localStorage.getItem("career")?.trim();
+
+const title = document.getElementById("roadmap-title");
+const content = document.getElementById("roadmap-content");
+
+/* ================= IT ================= */
+
+if (career === "Software Engineer") {
+    title.innerText = "Software Engineer Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Programming</h2><p>Learn Python, Java or C++.</p></div>
+        <div class="step"><h2>Step 2: DSA</h2><p>Arrays, Trees, Graphs, Algorithms.</p></div>
+        <div class="step"><h2>Step 3: Core CS</h2><p>OS, DBMS, Networks.</p></div>
+        <div class="step"><h2>Step 4: System Design</h2><p>Design scalable systems.</p></div>
+        <div class="step"><h2>Step 5: Projects</h2><p>Internships & real projects.</p></div>
+    `;
+}
+
+else if (career === "Web Developer") {
+    title.innerText = "Web Developer Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: HTML, CSS, JS</h2><p>Frontend basics.</p></div>
+        <div class="step"><h2>Step 2: Frameworks</h2><p>React / Angular / Vue.</p></div>
+        <div class="step"><h2>Step 3: Backend</h2><p>Node, PHP, APIs.</p></div>
+        <div class="step"><h2>Step 4: Deployment</h2><p>GitHub, Netlify.</p></div>
+        <div class="step"><h2>Step 5: Portfolio</h2><p>Full-stack projects.</p></div>
+    `;
+}
+
+else if (career === "UI / UX Designer") {
+    title.innerText = "UI / UX Designer Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Design Basics</h2><p>Color, typography.</p></div>
+        <div class="step"><h2>Step 2: UX Research</h2><p>User behavior.</p></div>
+        <div class="step"><h2>Step 3: Wireframes</h2><p>Low & high fidelity.</p></div>
+        <div class="step"><h2>Step 4: Tools</h2><p>Figma, XD.</p></div>
+        <div class="step"><h2>Step 5: Portfolio</h2><p>Case studies.</p></div>
+    `;
+}
+
+/* ================= BANKING ================= */
+
+else if (career === "Bank Officer") {
+    title.innerText = "Bank Officer Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Banking Basics</h2><p>Accounts & finance.</p></div>
+        <div class="step"><h2>Step 2: Aptitude</h2><p>Quant & reasoning.</p></div>
+        <div class="step"><h2>Step 3: Banking Exams</h2><p>IBPS, SBI.</p></div>
+        <div class="step"><h2>Step 4: Interview</h2><p>Banking awareness.</p></div>
+        <div class="step"><h2>Step 5: Promotion</h2><p>Officer → Manager.</p></div>
+    `;
+}
+
+else if (career === "Financial Analyst") {
+    title.innerText = "Financial Analyst Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Finance Basics</h2><p>Accounting.</p></div>
+        <div class="step"><h2>Step 2: Excel</h2><p>Advanced Excel.</p></div>
+        <div class="step"><h2>Step 3: Modeling</h2><p>Financial models.</p></div>
+        <div class="step"><h2>Step 4: Certification</h2><p>CFA.</p></div>
+        <div class="step"><h2>Step 5: Industry</h2><p>Banking firms.</p></div>
+    `;
+}
+
+else if (career === "Investment Banker") {
+    title.innerText = "Investment Banker Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Finance Fundamentals</h2><p>Accounting, corporate finance.</p></div>
+        <div class="step"><h2>Step 2: Financial Modeling</h2><p>Valuation, mergers & acquisitions.</p></div>
+        <div class="step"><h2>Step 3: Market Knowledge</h2><p>Stock markets & capital markets.</p></div>
+        <div class="step"><h2>Step 4: Certification</h2><p>CFA, MBA (Finance).</p></div>
+        <div class="step"><h2>Step 5: Investment Banks</h2><p>Goldman Sachs, JP Morgan, Morgan Stanley.</p></div>
+    `;
+}
+
+/* ================= HEALTHCARE ================= */
+
+else if (career === "Medical Lab Technician") {
+    title.innerText = "Medical Lab Technician Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Lab Basics</h2><p>Equipment & safety.</p></div>
+        <div class="step"><h2>Step 2: Diagnostics</h2><p>Blood & pathology.</p></div>
+        <div class="step"><h2>Step 3: Internship</h2><p>Hospital training.</p></div>
+        <div class="step"><h2>Step 4: Certification</h2><p>Medical license.</p></div>
+        <div class="step"><h2>Step 5: Employment</h2><p>Hospitals & labs.</p></div>
+    `;
+}
+
+else if (career === "Healthcare Administrator") {
+    title.innerText = "Healthcare Administrator Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Management</h2><p>Hospital admin.</p></div>
+        <div class="step"><h2>Step 2: Healthcare Laws</h2><p>Policies.</p></div>
+        <div class="step"><h2>Step 3: Operations</h2><p>Hospital workflow.</p></div>
+        <div class="step"><h2>Step 4: Leadership</h2><p>Team management.</p></div>
+        <div class="step"><h2>Step 5: Director</h2><p>Hospital leadership.</p></div>
+    `;
+}
+else if (career === "Clinical Research Associate") {
+    title.innerText = "Clinical Research Associate Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Life Science Basics</h2><p>Biology, pharmacology, clinical trials.</p></div>
+        <div class="step"><h2>Step 2: GCP Guidelines</h2><p>Good Clinical Practice & ethics.</p></div>
+        <div class="step"><h2>Step 3: Clinical Trials</h2><p>Phase I–IV trial processes.</p></div>
+        <div class="step"><h2>Step 4: Certification</h2><p>CRA certification & regulatory training.</p></div>
+        <div class="step"><h2>Step 5: CRO / Pharma</h2><p>Work in clinical research organizations.</p></div>
+    `;
+}
+
+
+/* ================= ENTREPRENEURSHIP ================= */
+
+else if (career === "Startup Founder") {
+    title.innerText = "Startup Founder Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Idea</h2><p>Problem solving.</p></div>
+        <div class="step"><h2>Step 2: Market</h2><p>Customer research.</p></div>
+        <div class="step"><h2>Step 3: MVP</h2><p>Build product.</p></div>
+        <div class="step"><h2>Step 4: Funding</h2><p>Investors.</p></div>
+        <div class="step"><h2>Step 5: Scale</h2><p>Growth.</p></div>
+    `;
+}
+else if (career === "Business Consultant") {
+    title.innerText = "Business Consultant Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Business Fundamentals</h2><p>Economics, management, accounting.</p></div>
+        <div class="step"><h2>Step 2: Problem Solving</h2><p>Case studies & analytical thinking.</p></div>
+        <div class="step"><h2>Step 3: Industry Knowledge</h2><p>Finance, IT, healthcare, or manufacturing.</p></div>
+        <div class="step"><h2>Step 4: Tools & Skills</h2><p>Excel, PowerPoint, data analysis.</p></div>
+        <div class="step"><h2>Step 5: Consulting Firms</h2><p>McKinsey, BCG, Deloitte, EY.</p></div>
+    `;
+}
+else if (career === "Product Manager") {
+    title.innerText = "Product Manager Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Product Basics</h2><p>Product lifecycle & strategy.</p></div>
+        <div class="step"><h2>Step 2: Market Research</h2><p>User needs & competitor analysis.</p></div>
+        <div class="step"><h2>Step 3: Technical Knowledge</h2><p>APIs, software basics.</p></div>
+        <div class="step"><h2>Step 4: Agile & Scrum</h2><p>Roadmaps & sprint planning.</p></div>
+        <div class="step"><h2>Step 5: Product Ownership</h2><p>Launch & scale products.</p></div>
+    `;
+}
+
+
+/* ================= MANUFACTURING ================= */
+
+else if (career === "Production Engineer") {
+    title.innerText = "Production Engineer Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Manufacturing</h2><p>Processes.</p></div>
+        <div class="step"><h2>Step 2: Quality</h2><p>Standards.</p></div>
+        <div class="step"><h2>Step 3: Automation</h2><p>Machines.</p></div>
+        <div class="step"><h2>Step 4: Safety</h2><p>Industrial safety.</p></div>
+        <div class="step"><h2>Step 5: Manager</h2><p>Plant operations.</p></div>
+    `;
+}
+else if (career === "Quality Control Engineer") {
+    title.innerText = "Quality Control Engineer Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Quality Basics</h2><p>Quality assurance & quality control principles.</p></div>
+        <div class="step"><h2>Step 2: Inspection Tools</h2><p>Calipers, micrometers, gauges.</p></div>
+        <div class="step"><h2>Step 3: Standards</h2><p>ISO, Six Sigma, quality audits.</p></div>
+        <div class="step"><h2>Step 4: Process Improvement</h2><p>Root cause analysis & defect reduction.</p></div>
+        <div class="step"><h2>Step 5: Quality Lead</h2><p>Quality manager or auditor roles.</p></div>
+    `;
+}
+else if (career === "Operations Manager") {
+    title.innerText = "Operations Manager Roadmap";
+    content.innerHTML = `
+        <div class="step"><h2>Step 1: Operations Basics</h2><p>Production planning & control.</p></div>
+        <div class="step"><h2>Step 2: Supply Chain</h2><p>Inventory & logistics management.</p></div>
+        <div class="step"><h2>Step 3: Process Optimization</h2><p>Lean manufacturing & Six Sigma.</p></div>
+        <div class="step"><h2>Step 4: Leadership</h2><p>Team handling & decision making.</p></div>
+        <div class="step"><h2>Step 5: Plant Head</h2><p>Factory or operations head roles.</p></div>
+    `;
+}
+
+
+/* ================= FALLBACK ================= */
+
+else {
+    title.innerText = "Roadmap Not Found";
+    content.innerHTML = "<p>Please select a career again.</p>";
+}
+
+function goInterview() {
+    window.location.href = "interview.html";
+}
+</script>
+
+</body>
+</html>

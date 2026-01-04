@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skill Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="top-header">
+    <div class="left-menu">
+        <a href="#">Home</a>
+        <a href="#">Recommendation</a>
+    </div>
+
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <ul>
+            <li class="step active">Education</li>
+            <li class="step">Work Experience</li>
+            <li class="step">Interest Areas</li>
+        </ul>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <section class="content">
+<!-- ===== HERO WELCOME BOX (ADD HERE) ===== -->
+    <div class="hero-box">
+        <h1>🎓 Discover Your Career Path</h1>
+        <img src="image.png" alt="Front Image" class="hero-img">
+        <p>Answer a few simple questions and get a personalized career roadmap</p>
+    </div>
+
+        <!-- STEP 1 -->
+        <div class="step-page active">
+            <h3>WHAT IS YOUR HIGHEST EDUCATION QUALIFICATION?</h3>
+            <div class="options">
+                <button>Below Class 10</button>
+                <button>Class 10</button>
+                <button>Class 12</button>
+                <button>Diploma</button>
+                <button>Graduation</button>
+                <button>Post Graduation</button>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-page">
+            <h3>WHAT IS YOUR WORK EXPERIENCE?</h3>
+            <div class="options">
+                <button>No Experience</button>
+                <button>Less than One Year</button>
+                <button>One to Three Years</button>
+                <button>More than Three Years</button>
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-page">
+            <h3>SELECT YOUR INTEREST AREAS</h3>
+            <div class="options">
+                <button>IT</button>
+                <button>Healthcare</button>
+                <button>Banking</button>
+                <button>Manufacturing</button>
+                <button>Entrepreneurship</button>
+            </div>
+        </div>
+
+        <!-- NAV BUTTONS -->
+        <div class="nav-buttons">
+            <button id="backBtn">Back</button>
+            <button id="nextBtn">Next</button>
+            <button id="finishBtn">Finish</button>
+        </div>
+
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

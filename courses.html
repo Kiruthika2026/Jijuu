@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Courses</title>
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+
+<h1 id="page-title"></h1>
+
+<div class="course-container" id="course-container"></div>
+
+<div class="resource-box" id="resource-box">
+    <h2 id="resource-title"></h2>
+    <ul id="resource-list"></ul>
+</div>
+
+<div class="btn-container">
+    <button class="roadmap-btn" onclick="goRoadmap()">View Roadmap</button>
+</div>
+
+<script>
+const career = localStorage.getItem("career")?.trim();
+
+const pageTitle = document.getElementById("page-title");
+const container = document.getElementById("course-container");
+const resourceBox = document.getElementById("resource-box");
+const resourceTitle = document.getElementById("resource-title");
+const resourceList = document.getElementById("resource-list");
+
+resourceBox.style.display = "none";
+
+/* ================= ALL CAREER COURSE DATA ================= */
+
+const data = {
+
+/* ===== IT ===== */
+
+"Software Engineer": {
+    title: "Courses for Software Engineer",
+    courses: {
+        "Programming": [
+            { name: "Python Full Course", url: "https://www.youtube.com/watch?v=rfscVS0vtbw" },
+            { name: "Java Full Course", url: "https://www.youtube.com/watch?v=grEKMHGYyns" }
+        ],
+        "Data Structures": [
+            { name: "DSA Complete Course", url: "https://www.youtube.com/watch?v=8hly31xKli0" }
+        ]
+    }
+},
+
+"Web Developer": {
+    title: "Courses for Web Developer",
+    courses: {
+        "HTML & CSS": [
+            { name: "HTML Course", url: "https://www.youtube.com/watch?v=pQN-pnXPaVg" },
+            { name: "CSS Course", url: "https://www.youtube.com/watch?v=OXGznpKZ_sA" }
+        ],
+        "JavaScript": [
+            { name: "JavaScript Course", url: "https://www.youtube.com/watch?v=PkZNo7MFNFg" }
+        ]
+    }
+},
+
+"UI / UX Designer": {
+    title: "Courses for UI / UX Designer",
+    courses: {
+        "Figma": [
+            { name: "Figma Full Course", url: "https://www.youtube.com/watch?v=FTFaQWZBqQ8" }
+        ],
+        "UX Basics": [
+            { name: "UX Design Course", url: "https://www.youtube.com/watch?v=Ovj4hFxko7c" }
+        ]
+    }
+},
+
+/* ===== BANKING ===== */
+
+"Bank Officer": {
+    title: "Courses for Bank Officer",
+    courses: {
+        "Banking Awareness": [
+            { name: "Banking Exam Preparation", url: "https://www.youtube.com/watch?v=Q6mZx8K1nXg" }
+        ],
+        "Accounting": [
+            { name: "Accounting Basics", url: "https://www.youtube.com/watch?v=KQw5z9LzP6E" }
+        ]
+    }
+},
+
+"Financial Analyst": {
+    title: "Courses for Financial Analyst",
+    courses: {
+        "Financial Modeling": [
+            { name: "Financial Modeling Course", url: "https://www.youtube.com/watch?v=K0v7F1T2nZs" }
+        ],
+        "Excel": [
+            { name: "Advanced Excel", url: "https://www.youtube.com/watch?v=Vl0H-qTclOg" }
+        ]
+    }
+},
+
+"Investment Banker": {
+    title: "Courses for Investment Banker",
+    courses: {
+        "Corporate Finance": [
+            { name: "Corporate Finance Course", url: "https://www.youtube.com/watch?v=Rk7w2pZJj1A" }
+        ],
+        "Risk Management": [
+            { name: "Risk Analysis Course", url: "https://www.youtube.com/watch?v=Z8GZ4zQxT7M" }
+        ]
+    }
+},
+
+/* ===== HEALTHCARE ===== */
+
+"Medical Lab Technician": {
+    title: "Courses for Medical Lab Technician",
+    courses: {
+        "Lab Techniques": [
+            { name: "Medical Lab Technology", url: "https://www.youtube.com/watch?v=V5K8T3x7ZfA" }
+        ]
+    }
+},
+
+"Healthcare Administrator": {
+    title: "Courses for Healthcare Administrator",
+    courses: {
+        "Hospital Management": [
+            { name: "Hospital Administration", url: "https://www.youtube.com/watch?v=QjYQkzqX0nU" }
+        ]
+    }
+},
+
+"Clinical Research Associate": {
+    title: "Courses for Clinical Research Associate",
+    courses: {
+        "Clinical Trials": [
+            { name: "Clinical Research Course", url: "https://www.youtube.com/watch?v=f3QyZ2Z5g6E" }
+        ]
+    }
+},
+
+/* ===== ENTREPRENEURSHIP ===== */
+
+"Startup Founder": {
+    title: "Courses for Startup Founder",
+    courses: {
+        "Startup Basics": [
+            { name: "Startup Bootcamp", url: "https://www.youtube.com/watch?v=7wH5Bz9mG1k" }
+        ],
+        "Marketing": [
+            { name: "Digital Marketing", url: "https://www.youtube.com/watch?v=nkNHn0VqVBA" }
+        ]
+    }
+},
+
+"Business Consultant": {
+    title: "Courses for Business Consultant",
+    courses: {
+        "Business Strategy": [
+            { name: "Business Strategy Course", url: "https://www.youtube.com/watch?v=9p9yJzQFJwU" }
+        ]
+    }
+},
+
+"Product Manager": {
+    title: "Courses for Product Manager",
+    courses: {
+        "Product Management": [
+            { name: "Product Management Course", url: "https://www.youtube.com/watch?v=7dC7J2ZPz4E" }
+        ]
+    }
+},
+
+/* ===== MANUFACTURING ===== */
+
+"Production Engineer": {
+    title: "Courses for Production Engineer",
+    courses: {
+        "Manufacturing Process": [
+            { name: "Manufacturing Engineering", url: "https://www.youtube.com/watch?v=Zp9v8k3k9gA" }
+        ]
+    }
+},
+
+"Quality Control Engineer": {
+    title: "Courses for Quality Control Engineer",
+    courses: {
+        "Quality Management": [
+            { name: "Quality Control Course", url: "https://www.youtube.com/watch?v=9u2m5v8QnYw" }
+        ]
+    }
+},
+
+"Operations Manager": {
+    title: "Courses for Operations Manager",
+    courses: {
+        "Operations Management": [
+            { name: "Operations Management Course", url: "https://www.youtube.com/watch?v=Hk6Q3nZf8L0" }
+        ]
+    }
+}
+
+};
+
+/* ================= LOAD COURSES ================= */
+
+const selected = data[career];
+
+if (!selected) {
+    pageTitle.innerText = "No courses found";
+    console.error("Career not matched:", career);
+} else {
+    pageTitle.innerText = selected.title;
+
+    for (let course in selected.courses) {
+        const div = document.createElement("div");
+        div.className = "course-card";
+        div.innerText = course;
+        div.onclick = () => showResources(course, selected.courses[course]);
+        container.appendChild(div);
+    }
+}
+
+/* ================= SHOW RESOURCES ================= */
+
+function showResources(courseName, resources) {
+    resourceBox.style.display = "block";
+    resourceTitle.innerText = courseName + " – Learning Resources";
+    resourceList.innerHTML = "";
+
+    resources.forEach(r => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${r.url}" target="_blank">${r.name}</a>`;
+        resourceList.appendChild(li);
+    });
+
+    resourceBox.scrollIntoView({ behavior: "smooth" });
+}
+
+/* ================= ROADMAP ================= */
+
+function goRoadmap() {
+    window.location.href = "roadmap.html";
+}
+</script>
+
+</body>
+</html>

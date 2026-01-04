@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(80, 252, 255);
+    padding: 8px;
+    text-align: justify;
+}
+.form-group {
+    display: flex;
+     align-items: center; 
+     margin: 10px ;
+     width: 300px;
+}
+.form-group label {
+    width: 150px; 
+}
+.form-group input {
+ padding: 8px;
+}

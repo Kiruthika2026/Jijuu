@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: solid;
+}
+
+.left-menu a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.left-menu a:hover {
+    color: orange;
+}
+
+.center-search input {
+    width: 300px;
+    padding: 8px;
+    border-radius: 20px;
+    border: solid;
+}
+
+/* ===== LOGIN & REGISTER ===== */
+.right-auth button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: white;
+    color: orange;
+    border: solid;
+}
+
+.register-btn {
+    background-color: orange;
+    color: white;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-container {
+    display: flex;
+    padding: 30px;
+    background-color: whitesmoke;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 250px;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== FULL BACKGROUND IMAGE ===== */
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url("image4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ===== HEADER ===== */
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: solid;
+}
+
+.left-menu a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.left-menu a:hover {
+    color: orange;
+}
+
+.center-search input {
+    width: 300px;
+    padding: 8px;
+    border-radius: 20px;
+    border: solid;
+}
+
+/* ===== LOGIN & REGISTER ===== */
+.right-auth button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: white;
+    color: orange;
+    border: solid;
+}
+
+.register-btn {
+    background-color: orange;
+    color: white;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-container {
+    display: flex;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85); /* transparent white */
+    border-radius: 15px;
+}
+
+/* ===== SIDEBAR (MADE BIGGER) ===== */
+.sidebar {
+    width: 320px;              /* increased size */
+    min-height: 100vh;         /* full height */
+    background-color: lightblue;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 18px;             /* bigger buttons */
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sidebar li:hover {
+    background-color: blue;
+    color: white;
+}
+
+.sidebar li.active {
+    background-color: blue;
+    color: white;
+}
+
+/* ===== CONTENT AREA ===== */
+.content {
+    flex: 1;
+    margin-left: 30px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+    background-color: lightyellow;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ===== OPTIONS BUTTONS ===== */
+.options {
+    margin-top: 15px;
+}
+
+.options button {
+    margin: 8px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: solid;
+    background-color: white;
+    cursor: pointer;
+}
+
+.options button:hover {
+    background-color: orange;
+    color: white;
+}
+
+/* ===== NEXT BUTTON ===== */
+.next-btn {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.next-btn button {
+    padding: 10px 25px;
+    background-color: orange;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== STEP PAGES ===== */
+.step-page {
+    display: none;
+}
+
+.step-page.active {
+    display: block;
+}
+
+/* ===== NAV BUTTONS ===== */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+#backBtn {
+    background-color: white;
+    color: black;
+    border: solid;
+    padding: 10px 20px;
+}
+
+#nextBtn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+/* ===== SIDEBAR STEP ACTIVE ===== */
+.sidebar .active {
+    background-color: blue;
+    color: white;
+}
+#nextBtn,
+#finishBtn {
+    display: none;
+}
+
+.options button.selected {
+    background-color: orange;
+    color: white;
+}
+/* ================= EXTRA COLORFUL UI ENHANCEMENTS ================= */
+
+/* Gradient overlay for background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,123,255,0.15), rgba(255,0,150,0.15));
+    z-index: -1;
+}
+
+/* STEP QUESTION TITLE */
+.step-page h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* OPTIONS – MORE ATTRACTIVE */
+.options button {
+    min-width: 160px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 12px 22px;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+}
+
+/* Hover animation */
+.options button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255,165,0,0.4);
+}
+
+/* Selected option – colorful glow */
+.options button.selected {
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    color: white;
+    border: none;
+    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.6);
+    transform: scale(1.08);
+}
+
+/* NAV BUTTONS – BACK / NEXT / FINISH */
+.nav-buttons button {
+    padding: 14px 34px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* BACK BUTTON */
+#backBtn {
+    background: linear-gradient(135deg, #6c757d, #343a40);
+    color: white;
+    border: none;
+}
+
+#backBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* NEXT BUTTON */
+#nextBtn {
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    color: white;
+}
+
+#nextBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255,165,0,0.6);
+}
+
+/* FINISH BUTTON */
+#finishBtn {
+    background: linear-gradient(135deg, #28a745, #7dff9a);
+    color: white;
+    border: none;
+}
+
+#finishBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(40,167,69,0.6);
+}
+
+/* Smooth step animation */
+.step-page {
+    animation: fadeSlide 0.4s ease;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== THEME 3 : ORANGE - YELLOW ===== */
+.content {
+    background: linear-gradient(135deg, #fff3e0, #fff8e1);
+}
+
+.step-page h3 {
+    color: #e65100;
+}
+
+.options button {
+    width: 70%;
+    display: block;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.options button.selected {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.5);
+}
+
+/* Attractive buttons */
+#backBtn {
+    background: linear-gradient(135deg, #9e9e9e, #616161);
+    color: white;
+    border-radius: 25px;
+}
+
+#finishBtn {
+    background: linear-gradient(135deg, #ff9800, #f44336);
+    color: white;
+    border-radius: 25px;
+}
+
+
+.hero-box {
+    background: linear-gradient(135deg, #ff9de2, #8ad6ff); /* pink to light blue */
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(138, 214, 255, 0.4); /* shadow matches new colors */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(138, 214, 255, 0.6);
+}
+
+.hero-box h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.hero-box p {
+    font-size: 16px;
+    opacity: 0.95;
+}
+.hero-img {
+    width: 180px;
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+

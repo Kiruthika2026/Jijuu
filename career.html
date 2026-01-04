@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Details</title>
+    <link rel="stylesheet" href="ccareer.css">
+</head>
+<body>
+
+<h1 id="career-title"></h1>
+
+<div class="content" id="career-content"></div>
+
+<div class="btn-container">
+    <button class="course-btn" onclick="goToCourses()">View Courses ➜</button>
+</div>
+
+<script>
+const career = localStorage.getItem("career");
+
+const title = document.getElementById("career-title");
+const content = document.getElementById("career-content");
+
+/* ================= IT ================= */
+
+if (career === "Software Engineer") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Software Engineers design, develop, and maintain software systems.</p>
+        <p>They work on applications, operating systems, and cloud platforms.</p>
+        <p>This career requires strong logic and continuous learning.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Java / Python / C++</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Problem Solving</li>
+            <li>Database Management</li>
+            <li>System Design</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Junior Engineer → Senior Engineer → Tech Lead → Software Architect</p>
+    `;
+}
+
+else if (career === "Web Developer") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Web Developers build websites and web-based applications.</p>
+        <p>They work on frontend, backend, or full-stack development.</p>
+        <p>This role focuses on user experience and performance.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>React / Angular / Vue</li>
+            <li>Node.js / PHP</li>
+            <li>REST APIs</li>
+            <li>Git & Deployment</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Junior Developer → Full Stack Developer → Lead Developer</p>
+    `;
+}
+
+else if (career === "UI / UX Designer") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>UI/UX Designers create user-friendly digital experiences.</p>
+        <p>They focus on usability, accessibility, and aesthetics.</p>
+        <p>The goal is to improve user satisfaction.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Figma / Adobe XD</li>
+            <li>User Research</li>
+            <li>Wireframing</li>
+            <li>Prototyping</li>
+            <li>Design Thinking</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Junior Designer → UI/UX Designer → Product Designer</p>
+    `;
+}
+
+/* ================= BANKING ================= */
+
+else if (career === "Bank Officer") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Bank Officers manage customer accounts and financial services.</p>
+        <p>They ensure smooth banking operations.</p>
+        <p>This role requires accuracy and customer interaction.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Accounting</li>
+            <li>Banking Regulations</li>
+            <li>Customer Service</li>
+            <li>Communication</li>
+            <li>Risk Management</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Clerk → Bank Officer → Branch Manager → Regional Manager</p>
+    `;
+}
+
+else if (career === "Financial Analyst") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Financial Analysts study financial data and market trends.</p>
+        <p>They help companies make investment decisions.</p>
+        <p>This career is data-driven and analytical.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Financial Modeling</li>
+            <li>Advanced Excel</li>
+            <li>Data Analysis</li>
+            <li>Valuation</li>
+            <li>Report Writing</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Junior Analyst → Senior Analyst → Finance Manager</p>
+    `;
+}
+
+else if (career === "Investment Banker") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Investment Bankers help companies raise capital.</p>
+        <p>They work on mergers, acquisitions, and IPOs.</p>
+        <p>This role is high-pressure and finance-focused.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Corporate Finance</li>
+            <li>Financial Modeling</li>
+            <li>Risk Analysis</li>
+            <li>Market Research</li>
+            <li>Negotiation</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Analyst → Associate → Vice President → Managing Director</p>
+    `;
+}
+
+/* ================= HEALTHCARE ================= */
+
+else if (career === "Medical Lab Technician") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Medical Lab Technicians perform laboratory tests.</p>
+        <p>They assist doctors in diagnosis.</p>
+        <p>Accuracy and safety are critical.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Lab Techniques</li>
+            <li>Sample Handling</li>
+            <li>Equipment Operation</li>
+            <li>Safety Protocols</li>
+            <li>Report Documentation</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Lab Technician → Senior Technician → Lab Supervisor</p>
+    `;
+}
+
+else if (career === "Healthcare Administrator") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Healthcare Administrators manage hospital operations.</p>
+        <p>They coordinate staff and resources.</p>
+        <p>This role combines healthcare and management.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Hospital Management</li>
+            <li>Leadership</li>
+            <li>Healthcare Laws</li>
+            <li>Communication</li>
+            <li>Strategic Planning</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Administrator → Operations Head → Hospital Director</p>
+    `;
+}
+
+else if (career === "Clinical Research Associate") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>CRAs monitor clinical trials.</p>
+        <p>They ensure compliance with protocols.</p>
+        <p>This role supports medical innovation.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Clinical Trials Knowledge</li>
+            <li>GCP Guidelines</li>
+            <li>Documentation</li>
+            <li>Data Monitoring</li>
+            <li>Regulatory Compliance</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>CRA → Senior CRA → Clinical Project Manager</p>
+    `;
+}
+
+/* ================= ENTREPRENEURSHIP ================= */
+
+else if (career === "Startup Founder") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Startup Founders create innovative businesses.</p>
+        <p>They identify problems and build solutions.</p>
+        <p>This role requires risk-taking.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Leadership</li>
+            <li>Marketing</li>
+            <li>Fundraising</li>
+            <li>Product Strategy</li>
+            <li>Decision Making</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Idea Stage → Startup Founder → Scaled Entrepreneur</p>
+    `;
+}
+
+else if (career === "Business Consultant") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Business Consultants advise organizations.</p>
+        <p>They improve efficiency and growth.</p>
+        <p>This role involves analysis and strategy.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Business Analysis</li>
+            <li>Problem Solving</li>
+            <li>Presentation Skills</li>
+            <li>Industry Knowledge</li>
+            <li>Client Communication</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Consultant → Senior Consultant → Strategy Head</p>
+    `;
+}
+
+else if (career === "Product Manager") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Product Managers own product development.</p>
+        <p>They connect business and technology.</p>
+        <p>This role drives product success.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Product Strategy</li>
+            <li>User Research</li>
+            <li>Agile & Scrum</li>
+            <li>Roadmapping</li>
+            <li>Stakeholder Management</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Associate PM → Product Manager → Head of Product</p>
+    `;
+}
+
+/* ================= MANUFACTURING ================= */
+
+else if (career === "Production Engineer") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Production Engineers optimize manufacturing.</p>
+        <p>They improve efficiency and output.</p>
+        <p>This role focuses on processes.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Manufacturing Processes</li>
+            <li>Quality Control</li>
+            <li>Automation</li>
+            <li>Lean Manufacturing</li>
+            <li>Problem Solving</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Production Engineer → Senior Engineer → Plant Manager</p>
+    `;
+}
+
+else if (career === "Quality Control Engineer") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Quality Engineers ensure product standards.</p>
+        <p>They reduce defects.</p>
+        <p>This role focuses on precision.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>ISO Standards</li>
+            <li>Inspection Tools</li>
+            <li>Six Sigma</li>
+            <li>Root Cause Analysis</li>
+            <li>Documentation</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>QC Engineer → Quality Manager → Audit Head</p>
+    `;
+}
+
+else if (career === "Operations Manager") {
+    title.innerText = career;
+    content.innerHTML = `
+        <h2>About</h2>
+        <p>Operations Managers oversee production.</p>
+        <p>They manage people and resources.</p>
+        <p>This role ensures smooth operations.</p>
+
+        <h2>Skills</h2>
+        <ul>
+            <li>Operations Planning</li>
+            <li>Supply Chain Management</li>
+            <li>Leadership</li>
+            <li>Process Optimization</li>
+            <li>Decision Making</li>
+        </ul>
+
+        <h2>Career Path</h2>
+        <p>Operations Manager → Plant Head → Operations Director</p>
+    `;
+}
+
+
+function goToCourses() {
+    localStorage.setItem("career", career);
+    window.location.href = "courses.html";
+}
+</script>
+
+</body>
+</html>
+
